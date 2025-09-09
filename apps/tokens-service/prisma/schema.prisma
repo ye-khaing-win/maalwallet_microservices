@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../generated/prisma"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ChainNamespace {
+  EIP155
+  SOLANA
+}
+
+model Chain {
+  id               String         @id @default(cuid())
+  createdAt        DateTime       @default(now()) @map("created_at")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+  deletedAt        DateTime?      @map("deleted_at")
+  name             String         @unique
+  chainID          String         @map("chain_id")
+  chainNamespace   ChainNamespace @map("chain_namespace") @default(EIP155)
+  rpcURL           String         @map("rpc_url")
+  displayName      String?        @map("display_name")
+  blockExplorerURL String?        @map("block_explorer_url")
+  ticker           String?
+  tickerName       String?        @map("ticker_name")
+  published        Boolean?       @default(false)
+  order            Decimal        @db.Decimal(5, 4) @default(0.0)
+  imageURL         String?        @map("image_url")
+
+  @@map("chains")
+}
