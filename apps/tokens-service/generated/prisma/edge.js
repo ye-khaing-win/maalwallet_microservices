@@ -143,7 +143,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/ykw/Desktop/Projects/microservices/maalwallet_microservices/apps/tokens-service/generated/prisma",
+      "value": "C:\\Users\\yekha\\OneDrive\\Desktop\\Projects\\Tijarah\\maalwallet_microservices\\apps\\tokens-service\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -152,7 +152,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       },
       {
@@ -161,7 +161,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/ykw/Desktop/Projects/microservices/maalwallet_microservices/apps/tokens-service/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\yekha\\OneDrive\\Desktop\\Projects\\Tijarah\\maalwallet_microservices\\apps\\tokens-service\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -175,7 +175,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
