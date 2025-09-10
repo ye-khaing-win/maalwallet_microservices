@@ -143,7 +143,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/ykw/Desktop/Projects/microservices/maalwallet_microservices/apps/tokens-service/generated/prisma",
+      "value": "/home/ykw/projects/maalwallet_microservices/apps/tokens-service/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -161,7 +161,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/ykw/Desktop/Projects/microservices/maalwallet_microservices/apps/tokens-service/prisma/schema.prisma",
+    "sourceFilePath": "/home/ykw/projects/maalwallet_microservices/apps/tokens-service/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

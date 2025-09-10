@@ -4,6 +4,7 @@ import {
   IsOptional,
   IsString,
   IsUrl,
+  IsEnum,
 } from 'class-validator';
 import { ChainNamespace } from '@app/common';
 import { Expose } from 'class-transformer';
@@ -16,36 +17,36 @@ export class CreateChainDTO {
 
   @IsNotEmpty()
   @IsHexadecimal()
-  @Expose({ name: 'chain_id' })
+  @Expose()
   chainID: string;
 
   @IsNotEmpty()
-  @IsString()
-  @Expose({ name: 'chain_namespace' })
+  @IsEnum(ChainNamespace)
+  @Expose()
   chainNamespace: ChainNamespace;
 
   @IsNotEmpty()
   @IsUrl()
-  @Expose({ name: 'rpc_url' })
+  @Expose()
   rpcURL: string;
 
   @IsNotEmpty()
   @IsString()
-  @Expose({ name: 'display_name' })
+  @Expose()
   displayName: string;
 
   @IsNotEmpty()
   @IsUrl()
-  @Expose({ name: 'block_explorer_url' })
+  @Expose()
   blockExplorerURL: string;
 
   @IsOptional()
   @IsString()
-  @Expose({ name: 'ticker' })
+  @Expose()
   ticker?: string;
 
   @IsOptional()
   @IsString()
-  @Expose({ name: 'ticker_name' })
+  @Expose()
   tickerName?: string;
 }

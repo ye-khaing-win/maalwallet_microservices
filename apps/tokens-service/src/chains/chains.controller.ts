@@ -5,7 +5,8 @@ import { MessagePattern, Payload } from '@nestjs/microservices';
 
 @Controller()
 export class ChainsController {
-  constructor(private readonly chainsService: ChainsService) {}
+  constructor(private readonly chainsService: ChainsService) {
+  }
 
   @MessagePattern(CHAINS_PATTERNS.CREATE)
   async create(@Payload() payload: CreateChainDTO) {
@@ -15,5 +16,10 @@ export class ChainsController {
   @MessagePattern(CHAINS_PATTERNS.LIST)
   async list() {
     return this.chainsService.list();
+  }
+
+  @MessagePattern(CHAINS_PATTERNS.DETAILS)
+  async findByID(@Payload() id: string) {
+    return this.chainsService.findByID(id);
   }
 }
