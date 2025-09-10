@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { CreateChainDTO } from './dto';
+import { CreateChainDTO, ChainDTO } from '@app/contracts/chains';
 import { PrismaService } from '../prisma/prisma.service';
-import { ChainDTO } from '@app/contracts';
 
 @Injectable()
 export class ChainsService {
@@ -11,5 +10,9 @@ export class ChainsService {
     return this.prisma.chain.create({
       data: payload,
     });
+  }
+
+  async list(): Promise<ChainDTO[]> {
+    return this.prisma.chain.findMany();
   }
 }

@@ -134,7 +134,7 @@ exports.Prisma.ChainScalarFieldEnum = {
   ticker: 'ticker',
   tickerName: 'tickerName',
   published: 'published',
-  order: 'order',
+  displayOrder: 'displayOrder',
   imageURL: 'imageURL'
 };
 

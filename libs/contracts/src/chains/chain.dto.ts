@@ -1,4 +1,5 @@
 export class ChainDTO {
+  id: string;
   name: string;
   chainID: string;
   chainNamespace: string;

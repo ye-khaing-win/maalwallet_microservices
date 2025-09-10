@@ -34,7 +34,7 @@ model Chain {
   ticker           String?
   tickerName       String?        @map("ticker_name")
   published        Boolean?       @default(false)
-  order            Decimal        @default(0.0) @db.Decimal(5, 4)
+  displayOrder     Int            @default(0) @map("display_order")
   imageURL         String?        @map("image_url")
 
   @@map("chains")

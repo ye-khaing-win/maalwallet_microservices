@@ -27,14 +27,14 @@ model Chain {
   deletedAt        DateTime?      @map("deleted_at")
   name             String         @unique
   chainID          String         @map("chain_id")
-  chainNamespace   ChainNamespace @map("chain_namespace") @default(EIP155)
+  chainNamespace   ChainNamespace @default(EIP155) @map("chain_namespace")
   rpcURL           String         @map("rpc_url")
   displayName      String?        @map("display_name")
   blockExplorerURL String?        @map("block_explorer_url")
   ticker           String?
   tickerName       String?        @map("ticker_name")
   published        Boolean?       @default(false)
-  order            Decimal        @db.Decimal(5, 4) @default(0.0)
+  displayOrder     Int            @default(0) @map("display_order")
   imageURL         String?        @map("image_url")
 
   @@map("chains")

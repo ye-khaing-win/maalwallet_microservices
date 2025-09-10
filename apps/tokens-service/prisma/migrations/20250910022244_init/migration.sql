@@ -8,17 +8,15 @@ CREATE TABLE "public"."chains" (
     "updated_at" TIMESTAMP(3) NOT NULL,
     "deleted_at" TIMESTAMP(3),
     "name" TEXT NOT NULL,
-    "network_name" TEXT,
     "chain_id" TEXT NOT NULL,
     "chain_namespace" "public"."ChainNamespace" NOT NULL DEFAULT 'EIP155',
     "rpc_url" TEXT NOT NULL,
     "display_name" TEXT,
     "block_explorer_url" TEXT,
-    "wss" TEXT,
     "ticker" TEXT,
     "ticker_name" TEXT,
     "published" BOOLEAN DEFAULT false,
-    "order" DECIMAL(5,4) NOT NULL DEFAULT 0.0,
+    "display_order" INTEGER NOT NULL DEFAULT 0,
     "image_url" TEXT,
 
     CONSTRAINT "chains_pkey" PRIMARY KEY ("id")

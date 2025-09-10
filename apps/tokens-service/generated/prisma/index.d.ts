@@ -886,11 +886,11 @@ export namespace Prisma {
   }
 
   export type ChainAvgAggregateOutputType = {
-    order: Decimal | null
+    displayOrder: number | null
   }
 
   export type ChainSumAggregateOutputType = {
-    order: Decimal | null
+    displayOrder: number | null
   }
 
   export type ChainMinAggregateOutputType = {
@@ -907,7 +907,7 @@ export namespace Prisma {
     ticker: string | null
     tickerName: string | null
     published: boolean | null
-    order: Decimal | null
+    displayOrder: number | null
     imageURL: string | null
   }
 
@@ -925,7 +925,7 @@ export namespace Prisma {
     ticker: string | null
     tickerName: string | null
     published: boolean | null
-    order: Decimal | null
+    displayOrder: number | null
     imageURL: string | null
   }
 
@@ -943,18 +943,18 @@ export namespace Prisma {
     ticker: number
     tickerName: number
     published: number
-    order: number
+    displayOrder: number
     imageURL: number
     _all: number
   }
 
 
   export type ChainAvgAggregateInputType = {
-    order?: true
+    displayOrder?: true
   }
 
   export type ChainSumAggregateInputType = {
-    order?: true
+    displayOrder?: true
   }
 
   export type ChainMinAggregateInputType = {
@@ -971,7 +971,7 @@ export namespace Prisma {
     ticker?: true
     tickerName?: true
     published?: true
-    order?: true
+    displayOrder?: true
     imageURL?: true
   }
 
@@ -989,7 +989,7 @@ export namespace Prisma {
     ticker?: true
     tickerName?: true
     published?: true
-    order?: true
+    displayOrder?: true
     imageURL?: true
   }
 
@@ -1007,7 +1007,7 @@ export namespace Prisma {
     ticker?: true
     tickerName?: true
     published?: true
-    order?: true
+    displayOrder?: true
     imageURL?: true
     _all?: true
   }
@@ -1112,7 +1112,7 @@ export namespace Prisma {
     ticker: string | null
     tickerName: string | null
     published: boolean | null
-    order: Decimal
+    displayOrder: number
     imageURL: string | null
     _count: ChainCountAggregateOutputType | null
     _avg: ChainAvgAggregateOutputType | null
@@ -1149,7 +1149,7 @@ export namespace Prisma {
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
-    order?: boolean
+    displayOrder?: boolean
     imageURL?: boolean
   }, ExtArgs["result"]["chain"]>
 
@@ -1167,7 +1167,7 @@ export namespace Prisma {
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
-    order?: boolean
+    displayOrder?: boolean
     imageURL?: boolean
   }, ExtArgs["result"]["chain"]>
 
@@ -1185,7 +1185,7 @@ export namespace Prisma {
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
-    order?: boolean
+    displayOrder?: boolean
     imageURL?: boolean
   }, ExtArgs["result"]["chain"]>
 
@@ -1203,11 +1203,11 @@ export namespace Prisma {
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
-    order?: boolean
+    displayOrder?: boolean
     imageURL?: boolean
   }
 
-  export type ChainOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "deletedAt" | "name" | "chainID" | "chainNamespace" | "rpcURL" | "displayName" | "blockExplorerURL" | "ticker" | "tickerName" | "published" | "order" | "imageURL", ExtArgs["result"]["chain"]>
+  export type ChainOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "deletedAt" | "name" | "chainID" | "chainNamespace" | "rpcURL" | "displayName" | "blockExplorerURL" | "ticker" | "tickerName" | "published" | "displayOrder" | "imageURL", ExtArgs["result"]["chain"]>
 
   export type $ChainPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Chain"
@@ -1226,7 +1226,7 @@ export namespace Prisma {
       ticker: string | null
       tickerName: string | null
       published: boolean | null
-      order: Prisma.Decimal
+      displayOrder: number
       imageURL: string | null
     }, ExtArgs["result"]["chain"]>
     composites: {}
@@ -1664,7 +1664,7 @@ export namespace Prisma {
     readonly ticker: FieldRef<"Chain", 'String'>
     readonly tickerName: FieldRef<"Chain", 'String'>
     readonly published: FieldRef<"Chain", 'Boolean'>
-    readonly order: FieldRef<"Chain", 'Decimal'>
+    readonly displayOrder: FieldRef<"Chain", 'Int'>
     readonly imageURL: FieldRef<"Chain", 'String'>
   }
     
@@ -2060,7 +2060,7 @@ export namespace Prisma {
     ticker: 'ticker',
     tickerName: 'tickerName',
     published: 'published',
-    order: 'order',
+    displayOrder: 'displayOrder',
     imageURL: 'imageURL'
   };
 
@@ -2146,20 +2146,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Decimal'
-   */
-  export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
-    
-
-
-  /**
-   * Reference to a field of type 'Decimal[]'
-   */
-  export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
-    
-
-
-  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -2170,6 +2156,20 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float'
+   */
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
   /**
    * Deep Input Types
@@ -2193,7 +2193,7 @@ export namespace Prisma {
     ticker?: StringNullableFilter<"Chain"> | string | null
     tickerName?: StringNullableFilter<"Chain"> | string | null
     published?: BoolNullableFilter<"Chain"> | boolean | null
-    order?: DecimalFilter<"Chain"> | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFilter<"Chain"> | number
     imageURL?: StringNullableFilter<"Chain"> | string | null
   }
 
@@ -2211,7 +2211,7 @@ export namespace Prisma {
     ticker?: SortOrderInput | SortOrder
     tickerName?: SortOrderInput | SortOrder
     published?: SortOrderInput | SortOrder
-    order?: SortOrder
+    displayOrder?: SortOrder
     imageURL?: SortOrderInput | SortOrder
   }
 
@@ -2232,7 +2232,7 @@ export namespace Prisma {
     ticker?: StringNullableFilter<"Chain"> | string | null
     tickerName?: StringNullableFilter<"Chain"> | string | null
     published?: BoolNullableFilter<"Chain"> | boolean | null
-    order?: DecimalFilter<"Chain"> | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFilter<"Chain"> | number
     imageURL?: StringNullableFilter<"Chain"> | string | null
   }, "id" | "name">
 
@@ -2250,7 +2250,7 @@ export namespace Prisma {
     ticker?: SortOrderInput | SortOrder
     tickerName?: SortOrderInput | SortOrder
     published?: SortOrderInput | SortOrder
-    order?: SortOrder
+    displayOrder?: SortOrder
     imageURL?: SortOrderInput | SortOrder
     _count?: ChainCountOrderByAggregateInput
     _avg?: ChainAvgOrderByAggregateInput
@@ -2276,7 +2276,7 @@ export namespace Prisma {
     ticker?: StringNullableWithAggregatesFilter<"Chain"> | string | null
     tickerName?: StringNullableWithAggregatesFilter<"Chain"> | string | null
     published?: BoolNullableWithAggregatesFilter<"Chain"> | boolean | null
-    order?: DecimalWithAggregatesFilter<"Chain"> | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntWithAggregatesFilter<"Chain"> | number
     imageURL?: StringNullableWithAggregatesFilter<"Chain"> | string | null
   }
 
@@ -2294,7 +2294,7 @@ export namespace Prisma {
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
-    order?: Decimal | DecimalJsLike | number | string
+    displayOrder?: number
     imageURL?: string | null
   }
 
@@ -2312,7 +2312,7 @@ export namespace Prisma {
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
-    order?: Decimal | DecimalJsLike | number | string
+    displayOrder?: number
     imageURL?: string | null
   }
 
@@ -2330,7 +2330,7 @@ export namespace Prisma {
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    order?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
     imageURL?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2348,7 +2348,7 @@ export namespace Prisma {
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    order?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
     imageURL?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2366,7 +2366,7 @@ export namespace Prisma {
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
-    order?: Decimal | DecimalJsLike | number | string
+    displayOrder?: number
     imageURL?: string | null
   }
 
@@ -2384,7 +2384,7 @@ export namespace Prisma {
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    order?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
     imageURL?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2402,7 +2402,7 @@ export namespace Prisma {
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    order?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    displayOrder?: IntFieldUpdateOperationsInput | number
     imageURL?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
@@ -2470,15 +2470,15 @@ export namespace Prisma {
     not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
-  export type DecimalFilter<$PrismaModel = never> = {
-    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type SortOrderInput = {
@@ -2500,12 +2500,12 @@ export namespace Prisma {
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
-    order?: SortOrder
+    displayOrder?: SortOrder
     imageURL?: SortOrder
   }
 
   export type ChainAvgOrderByAggregateInput = {
-    order?: SortOrder
+    displayOrder?: SortOrder
   }
 
   export type ChainMaxOrderByAggregateInput = {
@@ -2522,7 +2522,7 @@ export namespace Prisma {
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
-    order?: SortOrder
+    displayOrder?: SortOrder
     imageURL?: SortOrder
   }
 
@@ -2540,12 +2540,12 @@ export namespace Prisma {
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
-    order?: SortOrder
+    displayOrder?: SortOrder
     imageURL?: SortOrder
   }
 
   export type ChainSumOrderByAggregateInput = {
-    order?: SortOrder
+    displayOrder?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2630,20 +2630,20 @@ export namespace Prisma {
     _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
-  export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
     _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedDecimalFilter<$PrismaModel>
-    _sum?: NestedDecimalFilter<$PrismaModel>
-    _min?: NestedDecimalFilter<$PrismaModel>
-    _max?: NestedDecimalFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -2670,12 +2670,12 @@ export namespace Prisma {
     set?: boolean | null
   }
 
-  export type DecimalFieldUpdateOperationsInput = {
-    set?: Decimal | DecimalJsLike | number | string
-    increment?: Decimal | DecimalJsLike | number | string
-    decrement?: Decimal | DecimalJsLike | number | string
-    multiply?: Decimal | DecimalJsLike | number | string
-    divide?: Decimal | DecimalJsLike | number | string
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -2740,15 +2740,15 @@ export namespace Prisma {
     not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
   }
 
-  export type NestedDecimalFilter<$PrismaModel = never> = {
-    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -2766,17 +2766,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -2853,20 +2842,31 @@ export namespace Prisma {
     _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
-  export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
-    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
-    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
     _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedDecimalFilter<$PrismaModel>
-    _sum?: NestedDecimalFilter<$PrismaModel>
-    _min?: NestedDecimalFilter<$PrismaModel>
-    _max?: NestedDecimalFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
 

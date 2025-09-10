@@ -1,9 +1,11 @@
-import { IsHexadecimal, IsNotEmpty, IsString, IsUrl } from 'class-validator';
-
-enum ChainNamespace {
-  EIP155 = 'EIP155',
-  // SOLANA = 'SOLANA',
-}
+import {
+  IsHexadecimal,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+  IsUrl,
+} from 'class-validator';
+import { ChainNamespace } from '@app/common';
 
 export class CreateChainDTO {
   @IsNotEmpty()
@@ -30,11 +32,11 @@ export class CreateChainDTO {
   @IsUrl()
   blockExplorerURL: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  ticker: string;
+  ticker?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
-  tickerName: string;
+  tickerName?: string;
 }

@@ -1,14 +1,19 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { ChainsService } from './chains.service';
-import { CreateChainDTO } from './dto';
+import { CHAINS_PATTERNS, CreateChainDTO } from '@app/contracts/chains';
 import { MessagePattern, Payload } from '@nestjs/microservices';
 
-@Controller('chains')
+@Controller()
 export class ChainsController {
   constructor(private readonly chainsService: ChainsService) {}
 
-  @MessagePattern('chains.create')
+  @MessagePattern(CHAINS_PATTERNS.CREATE)
   async create(@Payload() payload: CreateChainDTO) {
     return this.chainsService.create(payload);
+  }
+
+  @MessagePattern(CHAINS_PATTERNS.LIST)
+  async list() {
+    return this.chainsService.list();
   }
 }
