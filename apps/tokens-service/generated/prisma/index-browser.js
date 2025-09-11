@@ -126,16 +126,16 @@ exports.Prisma.ChainScalarFieldEnum = {
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt',
   name: 'name',
-  chainID: 'chainID',
+  chainId: 'chainId',
   chainNamespace: 'chainNamespace',
-  rpcURL: 'rpcURL',
+  rpcUrl: 'rpcUrl',
   displayName: 'displayName',
-  blockExplorerURL: 'blockExplorerURL',
+  explorerUrl: 'explorerUrl',
   ticker: 'ticker',
   tickerName: 'tickerName',
   published: 'published',
   displayOrder: 'displayOrder',
-  imageURL: 'imageURL'
+  imageUrl: 'imageUrl'
 };
 
 exports.Prisma.SortOrder = {

@@ -1,30 +1,30 @@
 import { Expose } from 'class-transformer';
 
-export class ChainDTO {
-  @Expose({ name: 'id' })
+export class ChainDto {
+  @Expose()
   id: string;
 
-  @Expose({ name: 'name' })
+  @Expose()
   name: string;
 
-  @Expose({ name: 'chain_id' })
-  chainID: string;
+  @Expose()
+  chainId: string;
 
-  @Expose({ name: 'chain_namespace' })
+  @Expose()
   chainNamespace: string;
 
-  @Expose({ name: 'rpcURL' })
-  rpcURL: string;
+  @Expose()
+  rpcUrl: string;
 
-  @Expose({ name: 'display_name' })
-  displayName: string;
+  @Expose()
+  displayName?: string;
 
-  @Expose({ name: 'block_explorer_url' })
-  blockExplorerURL: string;
+  @Expose()
+  explorerUrl?: string;
 
-  @Expose({ name: 'ticker' })
+  @Expose()
   ticker?: string;
 
-  @Expose({ name: 'ticker_name' })
+  @Expose()
   tickerName?: string;
 }

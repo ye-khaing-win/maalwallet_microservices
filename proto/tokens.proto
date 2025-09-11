@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package tokens;
+
+service ChainsService {
+    rpc List(ListChainRequest) returns (ListChainResponse);
+    rpc Get(GetChainRequest) returns (ChainResponse);
+    rpc Create(CreateChainRequest) returns (ChainResponse);
+}
+
+enum ChainNamespace {
+    CHAIN_NAMESPACE_UNSPECIFIED = 0;
+    CHAIN_NAMESPACE_EIP155 = 1;
+    CHAIN_NAMESPACE_SOLANA = 2;
+}
+
+message ChainResponse {
+    string id = 1;
+    string name = 2;
+    string chain_id = 3;
+    string chain_namespace = 4;
+    string rpc_url = 5;
+}
+
+message ListChainRequest {}
+
+message ListChainResponse {
+    repeated ChainResponse chains = 1;
+}
+
+message GetChainRequest {
+    string id = 1;
+}
+
+message CreateChainRequest {
+    string name = 1;
+    string chain_id = 2;
+    string chain_namespace = 3;
+    string rpc_url = 4;
+    string display_name = 5;
+    string explorer_url = 6;
+
+}
+

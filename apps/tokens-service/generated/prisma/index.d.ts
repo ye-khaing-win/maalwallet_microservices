@@ -899,16 +899,16 @@ export namespace Prisma {
     updatedAt: Date | null
     deletedAt: Date | null
     name: string | null
-    chainID: string | null
+    chainId: string | null
     chainNamespace: $Enums.ChainNamespace | null
-    rpcURL: string | null
+    rpcUrl: string | null
     displayName: string | null
-    blockExplorerURL: string | null
+    explorerUrl: string | null
     ticker: string | null
     tickerName: string | null
     published: boolean | null
     displayOrder: number | null
-    imageURL: string | null
+    imageUrl: string | null
   }
 
   export type ChainMaxAggregateOutputType = {
@@ -917,16 +917,16 @@ export namespace Prisma {
     updatedAt: Date | null
     deletedAt: Date | null
     name: string | null
-    chainID: string | null
+    chainId: string | null
     chainNamespace: $Enums.ChainNamespace | null
-    rpcURL: string | null
+    rpcUrl: string | null
     displayName: string | null
-    blockExplorerURL: string | null
+    explorerUrl: string | null
     ticker: string | null
     tickerName: string | null
     published: boolean | null
     displayOrder: number | null
-    imageURL: string | null
+    imageUrl: string | null
   }
 
   export type ChainCountAggregateOutputType = {
@@ -935,16 +935,16 @@ export namespace Prisma {
     updatedAt: number
     deletedAt: number
     name: number
-    chainID: number
+    chainId: number
     chainNamespace: number
-    rpcURL: number
+    rpcUrl: number
     displayName: number
-    blockExplorerURL: number
+    explorerUrl: number
     ticker: number
     tickerName: number
     published: number
     displayOrder: number
-    imageURL: number
+    imageUrl: number
     _all: number
   }
 
@@ -963,16 +963,16 @@ export namespace Prisma {
     updatedAt?: true
     deletedAt?: true
     name?: true
-    chainID?: true
+    chainId?: true
     chainNamespace?: true
-    rpcURL?: true
+    rpcUrl?: true
     displayName?: true
-    blockExplorerURL?: true
+    explorerUrl?: true
     ticker?: true
     tickerName?: true
     published?: true
     displayOrder?: true
-    imageURL?: true
+    imageUrl?: true
   }
 
   export type ChainMaxAggregateInputType = {
@@ -981,16 +981,16 @@ export namespace Prisma {
     updatedAt?: true
     deletedAt?: true
     name?: true
-    chainID?: true
+    chainId?: true
     chainNamespace?: true
-    rpcURL?: true
+    rpcUrl?: true
     displayName?: true
-    blockExplorerURL?: true
+    explorerUrl?: true
     ticker?: true
     tickerName?: true
     published?: true
     displayOrder?: true
-    imageURL?: true
+    imageUrl?: true
   }
 
   export type ChainCountAggregateInputType = {
@@ -999,16 +999,16 @@ export namespace Prisma {
     updatedAt?: true
     deletedAt?: true
     name?: true
-    chainID?: true
+    chainId?: true
     chainNamespace?: true
-    rpcURL?: true
+    rpcUrl?: true
     displayName?: true
-    blockExplorerURL?: true
+    explorerUrl?: true
     ticker?: true
     tickerName?: true
     published?: true
     displayOrder?: true
-    imageURL?: true
+    imageUrl?: true
     _all?: true
   }
 
@@ -1104,16 +1104,16 @@ export namespace Prisma {
     updatedAt: Date
     deletedAt: Date | null
     name: string
-    chainID: string
+    chainId: string
     chainNamespace: $Enums.ChainNamespace
-    rpcURL: string
+    rpcUrl: string
     displayName: string | null
-    blockExplorerURL: string | null
+    explorerUrl: string | null
     ticker: string | null
     tickerName: string | null
     published: boolean | null
     displayOrder: number
-    imageURL: string | null
+    imageUrl: string | null
     _count: ChainCountAggregateOutputType | null
     _avg: ChainAvgAggregateOutputType | null
     _sum: ChainSumAggregateOutputType | null
@@ -1141,16 +1141,16 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     name?: boolean
-    chainID?: boolean
+    chainId?: boolean
     chainNamespace?: boolean
-    rpcURL?: boolean
+    rpcUrl?: boolean
     displayName?: boolean
-    blockExplorerURL?: boolean
+    explorerUrl?: boolean
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
     displayOrder?: boolean
-    imageURL?: boolean
+    imageUrl?: boolean
   }, ExtArgs["result"]["chain"]>
 
   export type ChainSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1159,16 +1159,16 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     name?: boolean
-    chainID?: boolean
+    chainId?: boolean
     chainNamespace?: boolean
-    rpcURL?: boolean
+    rpcUrl?: boolean
     displayName?: boolean
-    blockExplorerURL?: boolean
+    explorerUrl?: boolean
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
     displayOrder?: boolean
-    imageURL?: boolean
+    imageUrl?: boolean
   }, ExtArgs["result"]["chain"]>
 
   export type ChainSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1177,16 +1177,16 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     name?: boolean
-    chainID?: boolean
+    chainId?: boolean
     chainNamespace?: boolean
-    rpcURL?: boolean
+    rpcUrl?: boolean
     displayName?: boolean
-    blockExplorerURL?: boolean
+    explorerUrl?: boolean
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
     displayOrder?: boolean
-    imageURL?: boolean
+    imageUrl?: boolean
   }, ExtArgs["result"]["chain"]>
 
   export type ChainSelectScalar = {
@@ -1195,19 +1195,19 @@ export namespace Prisma {
     updatedAt?: boolean
     deletedAt?: boolean
     name?: boolean
-    chainID?: boolean
+    chainId?: boolean
     chainNamespace?: boolean
-    rpcURL?: boolean
+    rpcUrl?: boolean
     displayName?: boolean
-    blockExplorerURL?: boolean
+    explorerUrl?: boolean
     ticker?: boolean
     tickerName?: boolean
     published?: boolean
     displayOrder?: boolean
-    imageURL?: boolean
+    imageUrl?: boolean
   }
 
-  export type ChainOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "deletedAt" | "name" | "chainID" | "chainNamespace" | "rpcURL" | "displayName" | "blockExplorerURL" | "ticker" | "tickerName" | "published" | "displayOrder" | "imageURL", ExtArgs["result"]["chain"]>
+  export type ChainOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "deletedAt" | "name" | "chainId" | "chainNamespace" | "rpcUrl" | "displayName" | "explorerUrl" | "ticker" | "tickerName" | "published" | "displayOrder" | "imageUrl", ExtArgs["result"]["chain"]>
 
   export type $ChainPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Chain"
@@ -1218,16 +1218,16 @@ export namespace Prisma {
       updatedAt: Date
       deletedAt: Date | null
       name: string
-      chainID: string
+      chainId: string
       chainNamespace: $Enums.ChainNamespace
-      rpcURL: string
+      rpcUrl: string
       displayName: string | null
-      blockExplorerURL: string | null
+      explorerUrl: string | null
       ticker: string | null
       tickerName: string | null
       published: boolean | null
       displayOrder: number
-      imageURL: string | null
+      imageUrl: string | null
     }, ExtArgs["result"]["chain"]>
     composites: {}
   }
@@ -1656,16 +1656,16 @@ export namespace Prisma {
     readonly updatedAt: FieldRef<"Chain", 'DateTime'>
     readonly deletedAt: FieldRef<"Chain", 'DateTime'>
     readonly name: FieldRef<"Chain", 'String'>
-    readonly chainID: FieldRef<"Chain", 'String'>
+    readonly chainId: FieldRef<"Chain", 'String'>
     readonly chainNamespace: FieldRef<"Chain", 'ChainNamespace'>
-    readonly rpcURL: FieldRef<"Chain", 'String'>
+    readonly rpcUrl: FieldRef<"Chain", 'String'>
     readonly displayName: FieldRef<"Chain", 'String'>
-    readonly blockExplorerURL: FieldRef<"Chain", 'String'>
+    readonly explorerUrl: FieldRef<"Chain", 'String'>
     readonly ticker: FieldRef<"Chain", 'String'>
     readonly tickerName: FieldRef<"Chain", 'String'>
     readonly published: FieldRef<"Chain", 'Boolean'>
     readonly displayOrder: FieldRef<"Chain", 'Int'>
-    readonly imageURL: FieldRef<"Chain", 'String'>
+    readonly imageUrl: FieldRef<"Chain", 'String'>
   }
     
 
@@ -2052,16 +2052,16 @@ export namespace Prisma {
     updatedAt: 'updatedAt',
     deletedAt: 'deletedAt',
     name: 'name',
-    chainID: 'chainID',
+    chainId: 'chainId',
     chainNamespace: 'chainNamespace',
-    rpcURL: 'rpcURL',
+    rpcUrl: 'rpcUrl',
     displayName: 'displayName',
-    blockExplorerURL: 'blockExplorerURL',
+    explorerUrl: 'explorerUrl',
     ticker: 'ticker',
     tickerName: 'tickerName',
     published: 'published',
     displayOrder: 'displayOrder',
-    imageURL: 'imageURL'
+    imageUrl: 'imageUrl'
   };
 
   export type ChainScalarFieldEnum = (typeof ChainScalarFieldEnum)[keyof typeof ChainScalarFieldEnum]
@@ -2185,16 +2185,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Chain"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Chain"> | Date | string | null
     name?: StringFilter<"Chain"> | string
-    chainID?: StringFilter<"Chain"> | string
+    chainId?: StringFilter<"Chain"> | string
     chainNamespace?: EnumChainNamespaceFilter<"Chain"> | $Enums.ChainNamespace
-    rpcURL?: StringFilter<"Chain"> | string
+    rpcUrl?: StringFilter<"Chain"> | string
     displayName?: StringNullableFilter<"Chain"> | string | null
-    blockExplorerURL?: StringNullableFilter<"Chain"> | string | null
+    explorerUrl?: StringNullableFilter<"Chain"> | string | null
     ticker?: StringNullableFilter<"Chain"> | string | null
     tickerName?: StringNullableFilter<"Chain"> | string | null
     published?: BoolNullableFilter<"Chain"> | boolean | null
     displayOrder?: IntFilter<"Chain"> | number
-    imageURL?: StringNullableFilter<"Chain"> | string | null
+    imageUrl?: StringNullableFilter<"Chain"> | string | null
   }
 
   export type ChainOrderByWithRelationInput = {
@@ -2203,16 +2203,16 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
     name?: SortOrder
-    chainID?: SortOrder
+    chainId?: SortOrder
     chainNamespace?: SortOrder
-    rpcURL?: SortOrder
+    rpcUrl?: SortOrder
     displayName?: SortOrderInput | SortOrder
-    blockExplorerURL?: SortOrderInput | SortOrder
+    explorerUrl?: SortOrderInput | SortOrder
     ticker?: SortOrderInput | SortOrder
     tickerName?: SortOrderInput | SortOrder
     published?: SortOrderInput | SortOrder
     displayOrder?: SortOrder
-    imageURL?: SortOrderInput | SortOrder
+    imageUrl?: SortOrderInput | SortOrder
   }
 
   export type ChainWhereUniqueInput = Prisma.AtLeast<{
@@ -2224,16 +2224,16 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Chain"> | Date | string
     updatedAt?: DateTimeFilter<"Chain"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Chain"> | Date | string | null
-    chainID?: StringFilter<"Chain"> | string
+    chainId?: StringFilter<"Chain"> | string
     chainNamespace?: EnumChainNamespaceFilter<"Chain"> | $Enums.ChainNamespace
-    rpcURL?: StringFilter<"Chain"> | string
+    rpcUrl?: StringFilter<"Chain"> | string
     displayName?: StringNullableFilter<"Chain"> | string | null
-    blockExplorerURL?: StringNullableFilter<"Chain"> | string | null
+    explorerUrl?: StringNullableFilter<"Chain"> | string | null
     ticker?: StringNullableFilter<"Chain"> | string | null
     tickerName?: StringNullableFilter<"Chain"> | string | null
     published?: BoolNullableFilter<"Chain"> | boolean | null
     displayOrder?: IntFilter<"Chain"> | number
-    imageURL?: StringNullableFilter<"Chain"> | string | null
+    imageUrl?: StringNullableFilter<"Chain"> | string | null
   }, "id" | "name">
 
   export type ChainOrderByWithAggregationInput = {
@@ -2242,16 +2242,16 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
     name?: SortOrder
-    chainID?: SortOrder
+    chainId?: SortOrder
     chainNamespace?: SortOrder
-    rpcURL?: SortOrder
+    rpcUrl?: SortOrder
     displayName?: SortOrderInput | SortOrder
-    blockExplorerURL?: SortOrderInput | SortOrder
+    explorerUrl?: SortOrderInput | SortOrder
     ticker?: SortOrderInput | SortOrder
     tickerName?: SortOrderInput | SortOrder
     published?: SortOrderInput | SortOrder
     displayOrder?: SortOrder
-    imageURL?: SortOrderInput | SortOrder
+    imageUrl?: SortOrderInput | SortOrder
     _count?: ChainCountOrderByAggregateInput
     _avg?: ChainAvgOrderByAggregateInput
     _max?: ChainMaxOrderByAggregateInput
@@ -2268,16 +2268,16 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Chain"> | Date | string
     deletedAt?: DateTimeNullableWithAggregatesFilter<"Chain"> | Date | string | null
     name?: StringWithAggregatesFilter<"Chain"> | string
-    chainID?: StringWithAggregatesFilter<"Chain"> | string
+    chainId?: StringWithAggregatesFilter<"Chain"> | string
     chainNamespace?: EnumChainNamespaceWithAggregatesFilter<"Chain"> | $Enums.ChainNamespace
-    rpcURL?: StringWithAggregatesFilter<"Chain"> | string
+    rpcUrl?: StringWithAggregatesFilter<"Chain"> | string
     displayName?: StringNullableWithAggregatesFilter<"Chain"> | string | null
-    blockExplorerURL?: StringNullableWithAggregatesFilter<"Chain"> | string | null
+    explorerUrl?: StringNullableWithAggregatesFilter<"Chain"> | string | null
     ticker?: StringNullableWithAggregatesFilter<"Chain"> | string | null
     tickerName?: StringNullableWithAggregatesFilter<"Chain"> | string | null
     published?: BoolNullableWithAggregatesFilter<"Chain"> | boolean | null
     displayOrder?: IntWithAggregatesFilter<"Chain"> | number
-    imageURL?: StringNullableWithAggregatesFilter<"Chain"> | string | null
+    imageUrl?: StringNullableWithAggregatesFilter<"Chain"> | string | null
   }
 
   export type ChainCreateInput = {
@@ -2286,16 +2286,16 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     name: string
-    chainID: string
+    chainId: string
     chainNamespace?: $Enums.ChainNamespace
-    rpcURL: string
+    rpcUrl: string
     displayName?: string | null
-    blockExplorerURL?: string | null
+    explorerUrl?: string | null
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
     displayOrder?: number
-    imageURL?: string | null
+    imageUrl?: string | null
   }
 
   export type ChainUncheckedCreateInput = {
@@ -2304,16 +2304,16 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     name: string
-    chainID: string
+    chainId: string
     chainNamespace?: $Enums.ChainNamespace
-    rpcURL: string
+    rpcUrl: string
     displayName?: string | null
-    blockExplorerURL?: string | null
+    explorerUrl?: string | null
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
     displayOrder?: number
-    imageURL?: string | null
+    imageUrl?: string | null
   }
 
   export type ChainUpdateInput = {
@@ -2322,16 +2322,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     name?: StringFieldUpdateOperationsInput | string
-    chainID?: StringFieldUpdateOperationsInput | string
+    chainId?: StringFieldUpdateOperationsInput | string
     chainNamespace?: EnumChainNamespaceFieldUpdateOperationsInput | $Enums.ChainNamespace
-    rpcURL?: StringFieldUpdateOperationsInput | string
+    rpcUrl?: StringFieldUpdateOperationsInput | string
     displayName?: NullableStringFieldUpdateOperationsInput | string | null
-    blockExplorerURL?: NullableStringFieldUpdateOperationsInput | string | null
+    explorerUrl?: NullableStringFieldUpdateOperationsInput | string | null
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     displayOrder?: IntFieldUpdateOperationsInput | number
-    imageURL?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ChainUncheckedUpdateInput = {
@@ -2340,16 +2340,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     name?: StringFieldUpdateOperationsInput | string
-    chainID?: StringFieldUpdateOperationsInput | string
+    chainId?: StringFieldUpdateOperationsInput | string
     chainNamespace?: EnumChainNamespaceFieldUpdateOperationsInput | $Enums.ChainNamespace
-    rpcURL?: StringFieldUpdateOperationsInput | string
+    rpcUrl?: StringFieldUpdateOperationsInput | string
     displayName?: NullableStringFieldUpdateOperationsInput | string | null
-    blockExplorerURL?: NullableStringFieldUpdateOperationsInput | string | null
+    explorerUrl?: NullableStringFieldUpdateOperationsInput | string | null
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     displayOrder?: IntFieldUpdateOperationsInput | number
-    imageURL?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ChainCreateManyInput = {
@@ -2358,16 +2358,16 @@ export namespace Prisma {
     updatedAt?: Date | string
     deletedAt?: Date | string | null
     name: string
-    chainID: string
+    chainId: string
     chainNamespace?: $Enums.ChainNamespace
-    rpcURL: string
+    rpcUrl: string
     displayName?: string | null
-    blockExplorerURL?: string | null
+    explorerUrl?: string | null
     ticker?: string | null
     tickerName?: string | null
     published?: boolean | null
     displayOrder?: number
-    imageURL?: string | null
+    imageUrl?: string | null
   }
 
   export type ChainUpdateManyMutationInput = {
@@ -2376,16 +2376,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     name?: StringFieldUpdateOperationsInput | string
-    chainID?: StringFieldUpdateOperationsInput | string
+    chainId?: StringFieldUpdateOperationsInput | string
     chainNamespace?: EnumChainNamespaceFieldUpdateOperationsInput | $Enums.ChainNamespace
-    rpcURL?: StringFieldUpdateOperationsInput | string
+    rpcUrl?: StringFieldUpdateOperationsInput | string
     displayName?: NullableStringFieldUpdateOperationsInput | string | null
-    blockExplorerURL?: NullableStringFieldUpdateOperationsInput | string | null
+    explorerUrl?: NullableStringFieldUpdateOperationsInput | string | null
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     displayOrder?: IntFieldUpdateOperationsInput | number
-    imageURL?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ChainUncheckedUpdateManyInput = {
@@ -2394,16 +2394,16 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     name?: StringFieldUpdateOperationsInput | string
-    chainID?: StringFieldUpdateOperationsInput | string
+    chainId?: StringFieldUpdateOperationsInput | string
     chainNamespace?: EnumChainNamespaceFieldUpdateOperationsInput | $Enums.ChainNamespace
-    rpcURL?: StringFieldUpdateOperationsInput | string
+    rpcUrl?: StringFieldUpdateOperationsInput | string
     displayName?: NullableStringFieldUpdateOperationsInput | string | null
-    blockExplorerURL?: NullableStringFieldUpdateOperationsInput | string | null
+    explorerUrl?: NullableStringFieldUpdateOperationsInput | string | null
     ticker?: NullableStringFieldUpdateOperationsInput | string | null
     tickerName?: NullableStringFieldUpdateOperationsInput | string | null
     published?: NullableBoolFieldUpdateOperationsInput | boolean | null
     displayOrder?: IntFieldUpdateOperationsInput | number
-    imageURL?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2492,16 +2492,16 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrder
     name?: SortOrder
-    chainID?: SortOrder
+    chainId?: SortOrder
     chainNamespace?: SortOrder
-    rpcURL?: SortOrder
+    rpcUrl?: SortOrder
     displayName?: SortOrder
-    blockExplorerURL?: SortOrder
+    explorerUrl?: SortOrder
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
     displayOrder?: SortOrder
-    imageURL?: SortOrder
+    imageUrl?: SortOrder
   }
 
   export type ChainAvgOrderByAggregateInput = {
@@ -2514,16 +2514,16 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrder
     name?: SortOrder
-    chainID?: SortOrder
+    chainId?: SortOrder
     chainNamespace?: SortOrder
-    rpcURL?: SortOrder
+    rpcUrl?: SortOrder
     displayName?: SortOrder
-    blockExplorerURL?: SortOrder
+    explorerUrl?: SortOrder
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
     displayOrder?: SortOrder
-    imageURL?: SortOrder
+    imageUrl?: SortOrder
   }
 
   export type ChainMinOrderByAggregateInput = {
@@ -2532,16 +2532,16 @@ export namespace Prisma {
     updatedAt?: SortOrder
     deletedAt?: SortOrder
     name?: SortOrder
-    chainID?: SortOrder
+    chainId?: SortOrder
     chainNamespace?: SortOrder
-    rpcURL?: SortOrder
+    rpcUrl?: SortOrder
     displayName?: SortOrder
-    blockExplorerURL?: SortOrder
+    explorerUrl?: SortOrder
     ticker?: SortOrder
     tickerName?: SortOrder
     published?: SortOrder
     displayOrder?: SortOrder
-    imageURL?: SortOrder
+    imageUrl?: SortOrder
   }
 
   export type ChainSumOrderByAggregateInput = {

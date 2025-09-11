@@ -1,19 +1,45 @@
 import { Controller } from '@nestjs/common';
 import { ChainsService } from './chains.service';
-import { CHAINS_PATTERNS, CreateChainDTO } from '@app/contracts/chains';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+// import { CHAINS_PATTERNS, CreateChainDto } from '@app/contracts/chains';
+// import { MessagePattern, Payload } from '@nestjs/microservices';
+import {
+  ChainResponse,
+  ChainsServiceController,
+  ChainsServiceControllerMethods,
+  CreateChainRequest,
+  GetChainRequest,
+  ListChainResponse,
+} from '@app/contracts/proto/tokens';
 
 @Controller()
-export class ChainsController {
+@ChainsServiceControllerMethods()
+export class ChainsController implements ChainsServiceController {
   constructor(private readonly chainsService: ChainsService) {}
 
-  @MessagePattern(CHAINS_PATTERNS.CREATE)
-  async create(@Payload() payload: CreateChainDTO) {
-    return this.chainsService.create(payload);
+  async list(): Promise<ListChainResponse> {
+    const chains = await this.chainsService.list();
+
+    return {
+      chains,
+    };
   }
 
-  @MessagePattern(CHAINS_PATTERNS.LIST)
-  async list() {
-    return this.chainsService.list();
+  async get(request: GetChainRequest): Promise<ChainResponse> {
+    const id = request.id;
+    return this.chainsService.get(id);
   }
+
+  async create(request: CreateChainRequest): Promise<ChainResponse> {
+    return this.chainsService.create(request);
+  }
+
+  // @MessagePattern(CHAINS_PATTERNS.CREATE)
+  // async create(@Payload() payload: CreateChainDto) {
+  //   return this.chainsService.create(payload);
+  // }
+  //
+  // @MessagePattern(CHAINS_PATTERNS.LIST)
+  // async list() {
+  //   return this.chainsService.list();
+  // }
 }

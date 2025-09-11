@@ -21,21 +21,21 @@ enum ChainNamespace {
 }
 
 model Chain {
-  id               String         @id @default(cuid())
-  createdAt        DateTime       @default(now()) @map("created_at")
-  updatedAt        DateTime       @updatedAt @map("updated_at")
-  deletedAt        DateTime?      @map("deleted_at")
-  name             String         @unique
-  chainID          String         @map("chain_id")
-  chainNamespace   ChainNamespace @default(EIP155) @map("chain_namespace")
-  rpcURL           String         @map("rpc_url")
-  displayName      String?        @map("display_name")
-  blockExplorerURL String?        @map("block_explorer_url")
-  ticker           String?
-  tickerName       String?        @map("ticker_name")
-  published        Boolean?       @default(false)
-  displayOrder     Int            @default(0) @map("display_order")
-  imageURL         String?        @map("image_url")
+  id             String         @id @default(cuid())
+  createdAt      DateTime       @default(now()) @map("created_at")
+  updatedAt      DateTime       @updatedAt @map("updated_at")
+  deletedAt      DateTime?      @map("deleted_at")
+  name           String         @unique
+  chainId        String         @map("chain_id")
+  chainNamespace ChainNamespace @default(EIP155) @map("chain_namespace")
+  rpcUrl         String         @map("rpc_url")
+  displayName    String?        @map("display_name")
+  explorerUrl    String?        @map("explorer_url")
+  ticker         String?
+  tickerName     String?        @map("ticker_name")
+  published      Boolean?       @default(false)
+  displayOrder   Int            @default(0) @map("display_order")
+  imageUrl       String?        @map("image_url")
 
   @@map("chains")
 }

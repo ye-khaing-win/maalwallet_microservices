@@ -12,7 +12,7 @@ CREATE TABLE "public"."chains" (
     "chain_namespace" "public"."ChainNamespace" NOT NULL DEFAULT 'EIP155',
     "rpc_url" TEXT NOT NULL,
     "display_name" TEXT,
-    "block_explorer_url" TEXT,
+    "explorer_url" TEXT,
     "ticker" TEXT,
     "ticker_name" TEXT,
     "published" BOOLEAN DEFAULT false,

@@ -1,18 +1,26 @@
 import { Injectable } from '@nestjs/common';
-import { CreateChainDTO, ChainDTO } from '@app/contracts/chains';
+import { CreateChainDto, ChainDto } from './dto';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class ChainsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(payload: CreateChainDTO): Promise<ChainDTO> {
+  async create(payload: CreateChainDto): Promise<ChainDto> {
     return this.prisma.chain.create({
       data: payload,
     });
   }
 
-  async list(): Promise<ChainDTO[]> {
+  async list(): Promise<ChainDto[]> {
     return this.prisma.chain.findMany();
+  }
+
+  async get(id: string): Promise<ChainDto> {
+    return this.prisma.chain.findUnique({
+      where: {
+        id,
+      },
+    });
   }
 }

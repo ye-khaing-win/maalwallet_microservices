@@ -5,24 +5,23 @@ import {
   IsString,
   IsUrl,
 } from 'class-validator';
-import { ChainNamespace } from '@app/common';
 
-export class CreateChainDTO {
+export class CreateChainDto {
   @IsNotEmpty()
   @IsString()
   name: string;
 
   @IsNotEmpty()
   @IsHexadecimal()
-  chainID: string;
+  chainId: string;
 
   @IsNotEmpty()
   @IsString()
-  chainNamespace: ChainNamespace;
+  chainNamespace: string;
 
   @IsNotEmpty()
   @IsUrl()
-  rpcURL: string;
+  rpcUrl: string;
 
   @IsNotEmpty()
   @IsString()
@@ -30,7 +29,7 @@ export class CreateChainDTO {
 
   @IsNotEmpty()
   @IsUrl()
-  blockExplorerURL: string;
+  explorerUrl: string;
 
   @IsOptional()
   @IsString()
@@ -39,4 +38,6 @@ export class CreateChainDTO {
   @IsOptional()
   @IsString()
   tickerName?: string;
+
+  toProto() {}
 }

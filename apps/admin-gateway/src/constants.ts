@@ -1,1 +1,1 @@
-export const CHAINS_SERVICE = Symbol('chains-service');
+export const TOKENS_SERVICE = Symbol('tokens-service');
