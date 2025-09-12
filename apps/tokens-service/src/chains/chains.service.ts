@@ -6,9 +6,9 @@ import { PrismaService } from '../prisma/prisma.service';
 export class ChainsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(payload: CreateChainDto): Promise<ChainDto> {
+  async create(data: CreateChainDto): Promise<ChainDto> {
     return this.prisma.chain.create({
-      data: payload,
+      data,
     });
   }
 

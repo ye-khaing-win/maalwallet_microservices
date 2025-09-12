@@ -1,10 +1,13 @@
 import {
+  IsEnum,
   IsHexadecimal,
   IsNotEmpty,
   IsOptional,
   IsString,
   IsUrl,
 } from 'class-validator';
+import { ChainNamespace } from '@app/common';
+import { Expose } from 'class-transformer';
 
 export class CreateChainDto {
   @IsNotEmpty()
@@ -16,8 +19,8 @@ export class CreateChainDto {
   chainId: string;
 
   @IsNotEmpty()
-  @IsString()
-  chainNamespace: string;
+  @IsEnum(ChainNamespace)
+  chainNamespace: ChainNamespace;
 
   @IsNotEmpty()
   @IsUrl()
@@ -38,6 +41,4 @@ export class CreateChainDto {
   @IsOptional()
   @IsString()
   tickerName?: string;
-
-  toProto() {}
 }

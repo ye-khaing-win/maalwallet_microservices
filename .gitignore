@@ -4,6 +4,7 @@
 /build
 docker-compose*
 *.env
+**/generated/
 
 # Logs
 logs

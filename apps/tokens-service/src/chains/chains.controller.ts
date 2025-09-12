@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, UsePipes, ValidationPipe } from '@nestjs/common';
 import { ChainsService } from './chains.service';
 // import { CHAINS_PATTERNS, CreateChainDto } from '@app/contracts/chains';
 // import { MessagePattern, Payload } from '@nestjs/microservices';
@@ -30,13 +30,12 @@ export class ChainsController implements ChainsServiceController {
   }
 
   async create(request: CreateChainRequest): Promise<ChainResponse> {
+    console.log(request, 'req in controller');
     return this.chainsService.create(request);
   }
 
   // @MessagePattern(CHAINS_PATTERNS.CREATE)
-  // async create(@Payload() payload: CreateChainDto) {
-  //   return this.chainsService.create(payload);
-  // }
+  async createa() {}
   //
   // @MessagePattern(CHAINS_PATTERNS.LIST)
   // async list() {

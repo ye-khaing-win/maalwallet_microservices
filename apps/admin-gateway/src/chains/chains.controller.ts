@@ -7,11 +7,11 @@ import { Serialize } from '@app/common';
 export class ChainsController {
   constructor(private readonly chainsService: ChainsService) {}
 
-  // @Post()
-  // create(@Body() data: CreateChainDto) {
-  //   console.log(data);
-  //   return this.chainsService.create(data);
-  // }
+  @Post()
+  create(@Body() data: CreateChainDto) {
+    console.log(data);
+    return this.chainsService.create(data);
+  }
 
   @Serialize(ChainDto)
   @Get()

@@ -7,7 +7,7 @@ import {
   CHAINS_SERVICE_NAME,
   ChainsServiceClient,
 } from '@app/contracts/proto/tokens';
-import { ChainDto } from './dto';
+import { ChainDto, CreateChainDto } from './dto';
 
 @Injectable()
 export class ChainsService implements OnModuleInit {
@@ -24,12 +24,7 @@ export class ChainsService implements OnModuleInit {
 
     return res.chains;
   }
-  // async create(data: CreateChainDto) {
-  //   return lastValueFrom(
-  //     this.chainsService.send<ClientChainDTO, ClientCreateChainDTO>(
-  //       CHAINS_PATTERNS.CREATE,
-  //       data,
-  //     ),
-  //   );
-  // }
+  async create(data: CreateChainDto) {
+    return lastValueFrom(this.chainsService.create(data));
+  }
 }

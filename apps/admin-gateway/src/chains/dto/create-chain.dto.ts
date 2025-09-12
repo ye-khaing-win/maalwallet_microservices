@@ -18,7 +18,7 @@ export class CreateChainDto {
 
   @IsNotEmpty()
   @IsString()
-  chainNamespace: ChainNamespace;
+  chainNamespace: string;
 
   @IsNotEmpty()
   @IsUrl()
